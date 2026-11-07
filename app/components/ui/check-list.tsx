@@ -1,0 +1,15 @@
+import type { ReactNode } from "react";
+import { CheckIcon } from "../icons/ui-icons";
+
+export function CheckList({ items }: { items: { _key: string; text: ReactNode }[] }) {
+  return (
+    <ul className="space-y-3 text-[15px] text-neutral-700">
+      {items.map((item) => (
+        <li key={item._key} className="flex items-start gap-3">
+          <CheckIcon className="mt-[3px] size-4 shrink-0 text-brand-500" strokeWidth={2.5} />
+          <span className="leading-relaxed">{item.text}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
